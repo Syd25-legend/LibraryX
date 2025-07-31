@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibraryX - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-50">
+
+    <div id="app-container">
+        <!-- Login Page -->
+        <div id="login-page" class="flex min-h-screen">
+            <div class="w-full lg:w-1/2 bg-white flex flex-col justify-center p-8 sm:p-16">
+                <div class="flex items-center mb-8">
+                    <div class="bg-gray-800 text-white p-3 rounded-lg">
+                        <i class="ph-bold ph-books text-3xl"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold ml-4">LibraryX</h1>
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4 leading-tight">Your Gateway to<br>Endless Knowledge</h2>
+                <p class="text-gray-600 mb-12">Discover, borrow, and manage your reading journey with our comprehensive
+                    digital library platform.</p>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="bg-gray-100 p-3 rounded-lg"><i
+                                class="ph ph-desktop-tower text-2xl text-gray-700"></i></div>
+                        <div class="ml-4">
+                            <h3 class="font-semibold">Digital Library</h3>
+                            <p class="text-gray-500">Access thousands of books instantly</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-gray-100 p-3 rounded-lg"><i
+                                class="ph ph-magnifying-glass text-2xl text-gray-700"></i></div>
+                        <div class="ml-4">
+                            <h3 class="font-semibold">Smart Search</h3>
+                            <p class="text-gray-500">Find books by title, author, or genre</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2 bg-gray-50 flex items-center justify-center p-8">
+                <div
+                    class="bg-white p-8 sm:p-12 rounded-2xl shadow-lg w-full max-w-md flex flex-col justify-center min-h-[620px]">
+                    <!-- Login Form -->
+                    <div id="login-form-container">
+                        <div class="flex flex-col items-center mb-6">
+                            <div class="bg-gray-800 text-white p-4 rounded-full mb-4">
+                                <i class="ph-bold ph-shield-check text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold">Welcome!</h3>
+                            <p class="text-gray-500">Sign in to access your library account</p>
+                        </div>
+                        <form id="login-form" class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Login Role</label>
+                                <input type="hidden" id="login-role" value="student">
+                                <div class="grid grid-cols-2 gap-4" id="role-selector">
+                                    <div data-role="student"
+                                        class="role-box role-selected flex flex-col items-center p-4 border rounded-lg cursor-pointer">
+                                        <i class="ph-bold ph-student text-3xl mb-2"></i>
+                                        <span class="text-sm font-medium">Student</span>
+                                    </div>
+                                    <div data-role="admin"
+                                        class="role-box flex flex-col items-center p-4 border rounded-lg cursor-pointer">
+                                        <i class="ph-bold ph-user-gear text-3xl mb-2"></i>
+                                        <span class="text-sm font-medium">Admin</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="login-email" class="block text-sm font-medium text-gray-700">Email
+                                    Address</label>
+                                <input type="email" id="login-email" required
+                                    class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-800 focus:border-gray-800 sm:text-sm"
+                                    placeholder="Enter your email">
+                            </div>
+                            <div>
+                                <label for="login-password"
+                                    class="block text-sm font-medium text-gray-700">Password</label>
+                                <input type="password" id="login-password" required
+                                    class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-800 focus:border-gray-800 sm:text-sm"
+                                    placeholder="Enter your password">
+                            </div>
+                            <p id="login-error" class="text-red-500 text-sm hidden"></p>
+                            <div>
+                                <button type="submit"
+                                    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">Sign
+                                    In</button>
+                            </div>
+                        </form>
+                        <div class="text-center mt-6">
+                            <p class="text-sm text-gray-600">
+                                Don't have an account?
+                                <button id="show-signup-btn" class="font-medium text-gray-800 hover:text-gray-600">Sign
+                                    Up</button>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Signup Form -->
+                    <div id="signup-form-container" class="hidden">
+                        <div class="flex flex-col items-center mb-6">
+                            <div class="bg-gray-800 text-white p-4 rounded-full mb-4">
+                                <i class="ph-bold ph-user-plus text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold">Create Account</h3>
+                            <p class="text-gray-500">Join our community of readers</p>
+                        </div>
+                        <form id="signup-form" class="space-y-6">
+                            <div>
+                                <label for="signup-email" class="block text-sm font-medium text-gray-700">Email
+                                    Address</label>
+                                <input type="email" id="signup-email" required
+                                    class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-800 focus:border-gray-800 sm:text-sm"
+                                    placeholder="Enter your email">
+                            </div>
+                            <div>
+                                <label for="signup-password"
+                                    class="block text-sm font-medium text-gray-700">Password</label>
+                                <input type="password" id="signup-password" required
+                                    class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gray-800 focus:border-gray-800 sm:text-sm"
+                                    placeholder="Choose a strong password">
+                            </div>
+                            <p id="signup-error" class="text-red-500 text-sm hidden"></p>
+                            <div>
+                                <button type="submit"
+                                    class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800">Sign
+                                    Up</button>
+                            </div>
+                        </form>
+                        <div class="text-center mt-6">
+                            <p class="text-sm text-gray-600">
+                                Already have an account?
+                                <button id="show-login-btn" class="font-medium text-gray-800 hover:text-gray-600">Sign
+                                    In</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <!-- App Scripts -->
+    <script src="firebase-config.js"></script>
+    <script src="auth.js"></script>
+
+</body>
+
+</html>
