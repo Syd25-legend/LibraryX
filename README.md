@@ -6,5 +6,11 @@ Just by downlaoding the files, and then opening in VS Studio and then running on
 
 For the admin login, use the following credentials:
 
-email id- admin@libraryx.com
-password- adminxlib
+email id-- admin@libraryx.com
+password-- adminxlib
+
+You have to setup new user with sign up.
+
+But here is one already existing user credentials:
+email id-- soudey25@gmail.com
+password-- soudey
